@@ -17,7 +17,7 @@ public class Pelicula implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(name = "nombre_pelicula")
-	private String nombrePelicla;
+	private String nombrePelicula;
 	private String genero;
 	private String detalle;
 
@@ -31,11 +31,11 @@ public class Pelicula implements Serializable {
 	}
 
 	public String getNombrePelicla() {
-		return nombrePelicla;
+		return nombrePelicula;
 	}
 
 	public void setNombrePelicla(String nombrePelicla) {
-		this.nombrePelicla = nombrePelicla;
+		this.nombrePelicula = nombrePelicla;
 	}
 
 	public String getGenero() {
