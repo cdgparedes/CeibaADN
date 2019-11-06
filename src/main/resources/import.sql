@@ -1,0 +1,1 @@
+INSERT INTO pelicula(nombre_pelicula, genero, detalle) VALUES('Mi pelicula', 'terror', 'hola este un es detalle');
