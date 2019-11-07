@@ -33,24 +33,24 @@ pipeline {
             steps{
                 echo "------------>Compile<------------"
                 //sh 'gradle clean'
-		sh 'gradle --b ./api-rest/build.gradle compileJava'		  
+		sh 'gradle --b ./build.gradle compileJava'		  
             }
         }    
     
     stage('Unit Tests') {      
       steps{        
         echo "------------>Unit Tests<------------"      
-        sh 'gradle --b ./api-rest/build.gradle cleanTest test'
-        sh 'gradle --b ./api-rest/build.gradle test'
-        junit '**/api-rest/build/test-results/*.xml' //aggregate test results - JUnit
-				jacoco classPattern:'**/api-rest/build/classes/java', execPattern:'**/api-rest/build/jacoco/jacocoTest.exec', sourcePattern:'**/src/main/java'
+        sh 'gradle --b ./build.gradle cleanTest test'
+        sh 'gradle --b ./build.gradle test'
+        junit '**/build/test-results/*.xml' //aggregate test results - JUnit
+				jacoco classPattern:'**/build/classes/java', execPattern:'**/build/jacoco/jacocoTest.exec', sourcePattern:'**/src/main/java'
       }    
     }
     
     stage('Integration Tests') {      
       steps {
         echo "------------>Integration Tests<------------"  
-        //sh 'gradle --b ./api-rest/build.gradle integrationTest'
+        //sh 'gradle --b ./build.gradle integrationTest'
       }    
     }        
 
@@ -58,7 +58,7 @@ pipeline {
     steps {
       echo "------------>Build<------------"
       //Construir sin tarea test que se ejecutó previamente
-      sh 'gradle --b ./api-rest/build.gradle build -x test'      
+      sh 'gradle --b ./build.gradle build -x test'      
     }    
   }
 
@@ -81,7 +81,7 @@ post {
   success {      
     echo 'Esto correrá solo si se ejecuta satisfactoriamente'   
     // Se ejecutará correctamente, siempre y cuando exista la ruta expuesta
-    junit '**/api-rest/build/test-results/*.xml'
+    junit '**/build/test-results/*.xml'
   }    
   failure {      
     echo 'This will run only if failed' 
