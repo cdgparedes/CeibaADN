@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,5 +42,15 @@ public class PeliculaControlador {
 		return peliculas;
 			
 		}
+	
+	@GetMapping("/lista-peliculas")
+	public List<Pelicula> obtenerPeliculas(){
+		List<Pelicula> peliculas = new ArrayList<>();
+		peliculas = (List<Pelicula>) peliculaRepository.findAll();
+		for (Pelicula pelicula : peliculas) {
+			System.out.print(pelicula);
+		}
+		return peliculas;
+	}
 
 }
