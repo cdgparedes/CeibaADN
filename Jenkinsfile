@@ -29,7 +29,7 @@ pipeline {
       }
     }
     
-    stage('Compile'){
+    stage('Compile'){ex
             steps{
                 echo "------------>Compile<------------"
         sh 'gradle clean'
