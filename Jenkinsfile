@@ -70,7 +70,7 @@ pipeline {
         success {
             echo 'Esto correr� solo si se ejecuta satisfactoriamente'
             // Se ejecutar� correctamente, siempre y cuando exista la ruta expuesta
-            junit '**/build/test-results/*.xml'
+            //junit '**/build/test-results/*.xml'
         }
         failure {
             echo 'This will run only if failed'
