@@ -1,4 +1,4 @@
-package com.AndCeiba.model;
+package co.com.ceiba.tiquetes.cesar.grajales.model;
 
 public class Pelicula {
 	public String nombre_pelicula;

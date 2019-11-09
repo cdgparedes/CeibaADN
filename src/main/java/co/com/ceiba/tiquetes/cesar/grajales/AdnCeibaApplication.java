@@ -1,4 +1,4 @@
-package com.AndCeiba;
+package co.com.ceiba.tiquetes.cesar.grajales;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

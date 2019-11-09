@@ -1,8 +1,8 @@
-package com.AndCeiba.repository;
+package co.com.ceiba.tiquetes.cesar.grajales.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.AndCeiba.dominio.Pelicula;
+import co.com.ceiba.tiquetes.cesar.grajales.dominio.Pelicula;
 
 public interface PeliculaRepository  extends CrudRepository<Pelicula,Long>{
 	Pelicula findBynombrePelicula(String nombrePelicula);

@@ -1,4 +1,4 @@
-package com.AndCeiba.controlador;
+package co.com.ceiba.tiquetes.cesar.grajales.controlador;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.AndCeiba.dominio.Pelicula;
-import com.AndCeiba.repository.PeliculaRepository;
+import co.com.ceiba.tiquetes.cesar.grajales.dominio.Pelicula;
+import co.com.ceiba.tiquetes.cesar.grajales.repository.PeliculaRepository;
 
 @RestController
 public class PeliculaControlador {

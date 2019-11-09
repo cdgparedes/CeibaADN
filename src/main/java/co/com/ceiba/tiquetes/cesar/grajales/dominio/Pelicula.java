@@ -1,4 +1,4 @@
-package com.AndCeiba.dominio;
+package co.com.ceiba.tiquetes.cesar.grajales.dominio;
 
 import java.io.Serializable;
 
