@@ -56,7 +56,7 @@ pipeline {
             steps{
                 echo '------------>An�lisis de c�digo est�tico<------------'
                 withSonarQubeEnv('Sonar') {
-                sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
+                	//sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
                 }
             }
         }
