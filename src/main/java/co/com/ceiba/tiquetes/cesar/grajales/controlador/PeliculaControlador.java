@@ -13,18 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.com.ceiba.tiquetes.cesar.grajales.dominio.Pelicula;
 import co.com.ceiba.tiquetes.cesar.grajales.repository.PeliculaRepository;
+import co.com.ceiba.tiquetes.cesar.grajales.servicios.PeliculaServiceImplement;
 
 @RestController
 public class PeliculaControlador {
-	
-	/*@GetMapping("/")
-	public String holaMundo() {
-		return "Hola esta es mi pelicula";
-	}*/
+
 	@Autowired
-	private PeliculaRepository peliculaRepository;
-	
-	@RequestMapping(value = "/peliculas", method = RequestMethod.GET)
+	private PeliculaServiceImplement srvPelicula;
+
+	public PeliculaControlador(PeliculaServiceImplement srvPelicula) {
+		super();
+		this.srvPelicula = srvPelicula;
+	}
+
+	/*@RequestMapping(value = "/peliculas", method = RequestMethod.GET)
 	public List<Pelicula> findAll(@RequestParam(required = false) String nombrePelicula){
 		List<Pelicula> peliculas = new ArrayList<>();
 		
@@ -41,12 +43,12 @@ public class PeliculaControlador {
 		}
 		return peliculas;
 			
-		}
+		}*/
 	
 	@GetMapping("/lista-peliculas")
 	public List<Pelicula> obtenerPeliculas(){
 		List<Pelicula> peliculas = new ArrayList<>();
-		peliculas = (List<Pelicula>) peliculaRepository.findAll();
+		peliculas = srvPelicula.obtenerListaPeliculas();
 		for (Pelicula pelicula : peliculas) {
 			System.out.print(pelicula);
 		}
