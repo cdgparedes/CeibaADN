@@ -22,7 +22,7 @@ public class PeliculaControlador {
 	private PeliculaServiceImplement srvPelicula;
 
 	public PeliculaControlador(PeliculaServiceImplement srvPelicula) {
-		
+		super();
 		this.srvPelicula = srvPelicula;
 	}
 
